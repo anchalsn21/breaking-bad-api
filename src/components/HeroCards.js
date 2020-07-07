@@ -4,10 +4,13 @@ import { getAllCharacter } from "../utils/api";
 export default function HeroCards() {
   const [characters, setCharacters] = useState([]);
 
-  useEffect(async () => {
+  useEffect( () => {
+    async  function getCharData(){
     const data = await getAllCharacter();
     console.log("data===", data);
     setCharacters(data.data);
+}
+getCharData()
     // return () => {
     //     // cleanup
     // }
